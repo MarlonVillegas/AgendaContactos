@@ -13,6 +13,11 @@ angular.module('AgendaContactos').config(['$routeProvider', '$httpProvider', fun
                     controller: 'inicioController',
                     templateUrl: 'app/template/inicio.html'
                 }).
+                when('/logout', {
+                    controller: 'logoutController',
+                    template: '<p>Cerrando sesión...</p>',
+                    middleware: ['comprobarSession']
+                }).
                 otherwise('/');
     }
 ]);
