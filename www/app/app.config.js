@@ -13,10 +13,9 @@ angular.module('AgendaContactos').config(['$routeProvider', '$httpProvider', fun
                     controller: 'inicioController',
                     templateUrl: 'app/template/inicio.html'
                 }).
-                when('/logout', {
-                    controller: 'logoutController',
-                    template: '<p>Cerrando sesión...</p>',
-                    middleware: ['comprobarSession']
+                when('/agregar', {
+                    controller: 'agregarController',
+                    templateUrl: 'app/template/agregar.html'
                 }).
                 otherwise('/');
     }
