@@ -17,6 +17,10 @@ angular.module('AgendaContactos').config(['$routeProvider', '$httpProvider', fun
                     controller: 'agregarController',
                     templateUrl: 'app/template/agregar.html'
                 }).
+                when('/editar', {
+                    controller: 'editarController',
+                    templateUrl: 'app/template/editar.html'
+                }).
                 otherwise('/');
     }
 ]);

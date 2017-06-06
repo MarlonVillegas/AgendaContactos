@@ -20,7 +20,7 @@
                             <td>{{contacto.con_telefono}}</td>
                             <td>{{contacto.con_correo}}</td>
 
-                            <td><i ng-click="editar(contacto)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
+                            <td><a href="#!/editar"><i ng-click="editar(contacto)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i></a>
                                 <i ng-click="eliminar(contacto)" class="glyphicon glyphicon-trash"></i></td>
                         </tr>
 
@@ -34,4 +34,28 @@
 </div>
 <div class="divFooter">     
      <p class="parrafo">Agenda Telefonica <span>Brayan Andres Piedrahita © 2017</span></p>
+</div>
+
+<!-- MODAL ELIMINAR CONTACTO-->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" id="eliminarContacto" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
+                    Eliminar Contacto</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-success" ng-show="contactoEliminado"> 
+                    <center>Contacto Eliminado</center>
+                </div>
+                <center>
+                    <h4>¿Esta seguro?</h4>
+                    <p>Se va a eliminar el contacto</p>
+                    <h3>{{nombre}}</h3>
+                </center>
+                <button ng-click="submitEliminarContacto()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+            </div>
+        </div>
+    </div>
 </div>

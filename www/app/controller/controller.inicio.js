@@ -13,6 +13,33 @@ angular.module('AgendaContactos').controller('inicioController', ['$scope', 'obt
         };
 
         $scope.pintarTabla();
+        
+        $scope.eliminar = function (dato) {
+            $('#eliminarContacto').modal('toggle');
+            $scope.nombre = dato.con_nombre;
+            $scope.ideliminar = dato.con_id;
+        };
+
+        $scope.submitEliminarContacto = function () {
+            obtenerContacto.eliminarCon({id: $scope.ideliminar}).then(function successCallback(response) {
+                $scope.contactoEliminado = false;
+                if (response.data.code == 500) {
+                } else {
+                    $scope.contactoEliminado = true;
+                    $timeout(function () {
+                        $('#eliminarContacto').modal('toggle');
+                    }, 700);
+                    $timeout(function () {
+                        // $route.reload();
+                        window.location.reload();
+                    }, 1000);
+                }
+            }, function errorCallback(response) {
+                console.error(response);
+            });
+        };
+        
+        
             }]);
 
 
