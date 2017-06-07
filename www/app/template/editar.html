@@ -6,17 +6,24 @@
                 <div class="page-header">
                     <h1>Agregar Contacto</h1>
                 </div>
-                <form ng-submit="submit()">
+                <form ng-submit="submitEditarContacto()">
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="alert alert-success" ng-show="ContactoRegistrado">
                                 <center>Contacto Creado Con Exito</center>
                             </div>
+                             <div class="form-group" hidden>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
+                                    </span>
+                                    <input ng-model="edit.id" type="text" class="form-control" aria-label="..." placeholder="ID" required>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i>
                                     </span>
-                                    <input ng-model="dataRegistrarContacto.foto" type="text" class="form-control" aria-label="..." placeholder="FOTO" required>
+                                    <input ng-model="edit.foto" type="text" class="form-control" aria-label="..." placeholder="FOTO" required>
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
                                     </span>
                                 </div>
@@ -25,38 +32,38 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
                                     </span>
-                                    <input ng-model="dataRegistrarContacto.nombre" type="text" class="form-control" aria-label="..." placeholder="NOMBRE" required>
+                                    <input ng-model="edit.nombre" type="text" class="form-control" aria-label="..." placeholder="NOMBRE" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user-circle"></i>
                                     </span>
-                                    <input ng-model="dataRegistrarContacto.apellido" type="text" class="form-control" aria-label="..." placeholder="APELLIDO" required>
+                                    <input ng-model="edit.apellido" type="text" class="form-control" aria-label="..." placeholder="APELLIDO" required>
                                 </div>
                             </div>                            
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
                                     </span>
-                                    <input ng-model="dataRegistrarContacto.telefono" type="tel" class="form-control" aria-label="..." placeholder="TELEFONO" required>
+                                    <input ng-model="edit.telefono" type="tel" class="form-control" aria-label="..." placeholder="TELEFONO" required>
                                 </div>
                             </div>                            
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope-o"></i>
                                     </span>
-                                    <input ng-model="dataRegistrarContacto.correo" type="email" class="form-control" aria-label="..." placeholder="CORREO" required>
+                                    <input ng-model="edit.correo" type="email" class="form-control" aria-label="..." placeholder="CORREO" required>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-1">
-                            <button type="button" class="btn btn-default btn-block">Editar</button>
+                            <button type="submit" class="btn btn-default btn-block">Editar</button>
                         </div>
                         <div class="col-lg-1">
-                            <button type="submit" class="btn btn-danger btn-block">Limpiar</button>
+                            <button  class="btn btn-danger btn-block">Limpiar</button>
                         </div>
                         <div class="col-lg-1">
                             <a href="#!/inicio"><button type="submit" class="btn btn-default btn-block">Cancelar</button></a>    

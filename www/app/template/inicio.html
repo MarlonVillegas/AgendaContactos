@@ -6,6 +6,7 @@
                 <div class="table-responsive ">
                     <table class="table">
                         <tr>
+                            <th>Id</th>
                             <th>Foto</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
@@ -14,13 +15,14 @@
                             <th>Acciones</th>
                         </tr>
                         <tr ng-repeat="contacto in contactos">
+                            <td>{{contacto.con_id}}</td>
                             <td>{{contacto.con_foto}}</td>
                             <td>{{contacto.con_nombre}}</td>
                             <td>{{contacto.con_apellido}}</td>
                             <td>{{contacto.con_telefono}}</td>
                             <td>{{contacto.con_correo}}</td>
 
-                            <td><a href="#!/editar"><i ng-click="editar(contacto)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i></a>
+                            <td><i ng-click="editar(contacto)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
                                 <i ng-click="eliminar(contacto)" class="glyphicon glyphicon-trash"></i></td>
                         </tr>
 

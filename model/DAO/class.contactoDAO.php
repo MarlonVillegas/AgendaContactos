@@ -52,7 +52,7 @@ class contactoDAO extends dataSource implements IContacto {
   }
 
   public function update(\contacto $contacto) {
-	$sql = 'UPDATE contacto SET con_foto = :foto, con_nombre = :nombre, con_apellido = :apellido, con_telefono = :telefono, con_correo WHERE con_id = :id';
+	$sql = 'UPDATE contacto SET con_foto = :foto, con_nombre = :nombre, con_apellido = :apellido, con_telefono = :telefono, con_correo =:correo WHERE con_id = :id';
 	$params = array(
 		':foto' => $contacto->getFoto(),
 		':nombre' => $contacto->getNombre(),

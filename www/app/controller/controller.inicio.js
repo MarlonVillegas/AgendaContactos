@@ -39,6 +39,10 @@ angular.module('AgendaContactos').controller('inicioController', ['$scope', 'obt
             });
         };
         
+          $scope.editar = function (contacto){
+            $sessionStorage.datosPersona = contacto;
+            $location.path('/editar');
+        };
         
             }]);
 
