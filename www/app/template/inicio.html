@@ -1,63 +1,66 @@
 <ng-include src=" 'app/template/menuTop/menuTop.html' "></ng-include>
 <div class="container-fluid">
-    <div class="col-lg-12  principal">
-        <div class="row" style="margin-top: 0px;">
-            <div class="col-lg-10 col-lg-offset-1" style="margin-top: 20px;">
-                <div class="table-responsive ">
-                    <table class="table">
-                        <tr>
-                            <th>Id</th>
-                            <th>Foto</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Teléfono</th>
-                            <th>Correo</th>
-                            <th>Acciones</th>
-                        </tr>
-                        <tr ng-repeat="contacto in contactos">
-                            <td>{{contacto.con_id}}</td>
-                            <td>{{contacto.con_foto}}</td>
-                            <td>{{contacto.con_nombre}}</td>
-                            <td>{{contacto.con_apellido}}</td>
-                            <td>{{contacto.con_telefono}}</td>
-                            <td>{{contacto.con_correo}}</td>
-
-                            <td><i ng-click="editar(contacto)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
-                                <i ng-click="eliminar(contacto)" class="glyphicon glyphicon-trash"></i></td>
-                        </tr>
-
-                    </table>
-                    
-                </div>
-            </div>
+  <div class="col-lg-12  principal">
+    <div class="row" style="margin-top: 0px;">
+      <div class="col-lg-10 col-lg-offset-1" style="margin-top: 20px;">
+        <div class="page header">
+          <h1><span class="glyphicon glyphicon-list"></span> Lista de Contactos</h1>
         </div>
+        <div class="table-responsive ">
+          <table class="table">
+            <tr>
+              <th>Id</th>
+              <th>Foto</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Teléfono</th>
+              <th>Correo</th>
+              <th>Acciones</th>
+            </tr>
+            <tr ng-repeat="contacto in contactos">
+              <td>{{contacto.con_id}}</td>
+              <td>{{contacto.con_foto}}</td>
+              <td>{{contacto.con_nombre}}</td>
+              <td>{{contacto.con_apellido}}</td>
+              <td>{{contacto.con_telefono}}</td>
+              <td>{{contacto.con_correo}}</td>
+
+              <td><i ng-click="editar(contacto)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
+                <i ng-click="eliminar(contacto)" class="glyphicon glyphicon-trash"></i></td>
+            </tr>
+
+          </table>
+
+        </div>
+      </div>
     </div>
-   
+  </div>
+
 </div>
-<div class="divFooter">     
-     <p class="parrafo">Agenda Telefonica <span>Brayan Andres Piedrahita © 2017</span></p>
+<div class="divFooter">
+  <center><p class="parrafo">Agenda Telefonica <span style="font-size: 15px">Marlon Villegas Vargas © 2017</span></p></center>
 </div>
 
 <!-- MODAL ELIMINAR CONTACTO-->
 <div class="modal fade bs-example-modal-sm" tabindex="-1" id="eliminarContacto" role="dialog" aria-labelledby="mySmallModalLabel">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
-                    Eliminar Contacto</h4>
-            </div>
-            <div class="modal-body">
-                <div class="alert alert-success" ng-show="contactoEliminado"> 
-                    <center>Contacto Eliminado</center>
-                </div>
-                <center>
-                    <h4>¿Esta seguro?</h4>
-                    <p>Se va a eliminar el contacto</p>
-                    <h3>{{nombre}}</h3>
-                </center>
-                <button ng-click="submitEliminarContacto()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
-            </div>
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
+          Eliminar Oso Maduro</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success" ng-show="contactoEliminado">
+          <center>Contacto Eliminado</center>
         </div>
+        <center>
+          <h4>¿Esta seguro?</h4>
+          <p>Se va a eliminar el contacto</p>
+          <h3>{{nombre}}</h3>
+        </center>
+        <button ng-click="submitEliminarContacto()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+      </div>
     </div>
+  </div>
 </div>

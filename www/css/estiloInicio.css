@@ -1,15 +1,16 @@
 .principal{
-    margin-bottom: 0px;
-    height: calc(100vh - 128px);
-    overflow: auto;
-    border: solid 1px #080808
+  font-family: Footlight MT Light;
+  margin-bottom: 0px;
+  height: calc(100vh - 128px);
+  overflow: auto;
+  border: solid 1px #080808
 }
 .divFooter{
-    background:  #737373;
-    color: white;
-    margin-top: 10px;
+  background:  #3c3c3c;
+  color: white;
+  margin-top: 10px;
 }
 .parrafo{
-    font-family: initial;
-    font-size: 20px;
+  font-family: Papyrus;
+  font-size: 25px;
 }
