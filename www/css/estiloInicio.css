@@ -3,8 +3,20 @@
   margin-bottom: 0px;
   height: calc(100vh - 128px);
   overflow: auto;
-  border: solid 1px #080808
+  border: solid 1px #080808;
+  background: white;
 }
+
+.titulo2{
+    font-family: Berlin Sans FB;
+}
+
+.centro{
+    text-align: center;
+    font-family: Gill Sans MT Condensed;
+    font-size: 20px;
+}
+
 .divFooter{
   background:  #3c3c3c;
   color: white;

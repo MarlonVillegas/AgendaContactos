@@ -38,6 +38,11 @@ angular.module('AgendaContactos').config(['$routeProvider', '$httpProvider', fun
                     templateUrl: 'app/template/editar.html',
                     middleware: ['comprobarSession']
                 }).
+                when('/formBuscar', {
+                    controller: 'formBuscarController',
+                    templateUrl: 'app/template/formBuscar.html',
+                    middleware: ['comprobarSession']
+                }).
                 when('/logout', {
                     controller: 'logoutController',
                     template: '<p>Cerrando sesión...</p>',
