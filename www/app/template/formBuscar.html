@@ -7,18 +7,36 @@
                     <h1 class="titulo2"><small class="glyphicon glyphicon-search"></small> Resultado de la Busqueda</h1>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 targeta" ng-repeat="contacto in contactos">
+                    <div class="alert alert-success">
+                        <center>No hay resultado de busquedad</center>
+                    </div>
+                    <div class="col-lg-4 targeta" ng-repeat="contacto in contactos">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                Panel content
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        foto
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <div class="page-header headerTargeta">
+                                            <p class="parrafoTargeta"><span>{{contacto.con_nombre}} {{contacto.con_apellido}}</span></p>
+                                        </div>
+                                        <p class="parrafoTargeta">Telefono: <span>{{contacto.con_telefono}}</span></p>
+                                        <p class="parrafoTargeta">Correo: <span>{{contacto.con_correo}}</span></p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="panel-footer">
-                                
+                                <div class="row">
+                                    <div class="col-lg-4 col-lg-offset-4">
+                                        <button class="btn btn-block btn-success botonTargeta">Editar</button>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button class="btn btn-block btn-danger botonTargeta">Eliminar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        hola a
                     </div>
                 </div>
             </div>
