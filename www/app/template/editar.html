@@ -6,7 +6,7 @@
                 <div class="page-header">
                     <h1 class="tituloAgregar"><small class="glyphicon glyphicon-pencil"></small> Editar Contacto<a href="#!/inicio"><small class="glyphicon glyphicon-menu-right iconoAtras"></small></a></h1>
                 </div>
-                <form ng-submit="submitEditarContacto()">
+                <form name="frmEditar" ng-submit="submitEditarContacto()">
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="alert alert-success" ng-show="ContactoRegistrado">
@@ -23,13 +23,14 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i>
                                     </span>
-                                    <input ng-model="edit.foto" type="text" class="form-control fontImput" aria-label="..." placeholder="FOTO">
-                                    <span ngf-select ng-model="dataRegistrarContacto.foto" name="inputFile" ngf-pattern="'image/*'"
+                                    <input type="hidden" ng-init="edit.fotoNombre = edit.foto" ng-model="edit.fotoNombre">
+                                    <input readonly ng-model="edit.fotoNombre" type="text" class="form-control fontImput" aria-label="..." placeholder="FOTO">
+                                    <span ngf-select ng-model="edit.foto" name="inputFile" ngf-pattern="'image/*'"
                                           ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="300" 
                                           ngf-resize="{width: 300, height: 300}"  class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
                                     </span>
                                 </div>
-                                <img style="margin-top: 10px;" ngf-src="dataRegistrarContacto.foto" ngf-resize="{width: 100, height: 100, quality: 1}">
+                                <center><img style="margin-top: 10px;" ngf-src="dataRegistrarContacto.foto" ngf-resize="{width: 100, height: 100, quality: 1}"></center>
                                 <div class="alert alert-danger" ng-show="erroIMG">
                                     Error en la imágen de contacto
                                 </div>

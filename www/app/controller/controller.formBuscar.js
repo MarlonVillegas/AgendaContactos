@@ -1,5 +1,6 @@
-angular.module('AgendaContactos').controller('formBuscarController', ['$scope', 'formBuscarService', '$sessionStorage', '$location', 'rolAdmin', '$timeout', function ($scope, buscar, $sessionStorage, $location, rolAdmin, $timeout) {
+angular.module('AgendaContactos').controller('formBuscarController', ['$scope', 'formBuscarService', '$sessionStorage', '$location', 'rolAdmin', '$timeout', 'urlUploads', function ($scope, buscar, $sessionStorage, $location, rolAdmin, $timeout, urlUploads) {
 
+        $scope.urlUploads = urlUploads;
         $scope.contactos = [];
 //        $scope.buscar = {};
         $scope.buscarp = {};

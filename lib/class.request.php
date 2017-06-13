@@ -39,5 +39,17 @@ class request {
   public function getFile($file): array {
     return $this->files[$file];
   }
+  
+  public function hasFile($file): bool {
+      return isset($this->files[$file]);
+  }
+  
+  public function hasParam($param): bool {
+      return isset($this->post[$param]);
+  }
+  
+  public function hasQuery($query): bool {
+      return isset($this->get[$query]);
+  }
 
 }

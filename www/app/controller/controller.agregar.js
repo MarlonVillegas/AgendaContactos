@@ -31,7 +31,7 @@ angular.module('AgendaContactos').controller('agregarController', ['$scope', 're
 //                    }, 700);
                     $timeout(function () {
                         // $route.reload();
-                        window.location.reload();
+//                        window.location.reload();
                         $location.path('inicio');
                     }, 1000);
 
