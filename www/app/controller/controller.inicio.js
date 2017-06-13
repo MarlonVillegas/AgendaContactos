@@ -1,5 +1,6 @@
-angular.module('AgendaContactos').controller('inicioController', ['$scope', 'obtenerContactoService', '$sessionStorage', '$location', 'rolAdmin', '$route', '$timeout', function ($scope, obtenerContacto, $sessionStorage, $location, rolAdmin, $route, $timeout) {
+angular.module('AgendaContactos').controller('inicioController', ['$scope', 'obtenerContactoService', '$sessionStorage', '$location', 'rolAdmin', '$route', '$timeout', 'urlUploads', function ($scope, obtenerContacto, $sessionStorage, $location, rolAdmin, $route, $timeout, urlUploads) {
     $scope.contactos = [];
+    $scope.urlUploads = urlUploads;
     $scope.pintarTabla = function () {
       obtenerContacto.obtenerCon.then(function successCallback(response) {
         switch (response.data.code) {

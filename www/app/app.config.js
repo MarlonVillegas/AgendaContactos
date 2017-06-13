@@ -1,5 +1,6 @@
 angular.module('AgendaContactos').constant('rolAdmin', 1);
 angular.module('AgendaContactos').constant('rolCelador', 2);
+angular.module('AgendaContactos').constant('urlUploads', 'http://localhost/AgendaContactos/www/uploads/');
 
 /**
  * middleware que comprueba las session y los tipos de roles

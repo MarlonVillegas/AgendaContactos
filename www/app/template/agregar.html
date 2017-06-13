@@ -6,7 +6,7 @@
                 <div class="page-header">
                     <h1>Agregar Contacto</h1>
                 </div>
-                <form name="frmImagen" ng-submit="submitNuevoContacto()">
+                <form name="frmAgregar" ng-submit="submitNuevoContacto()">
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="alert alert-success" ng-show="ContactoRegistrado">
@@ -16,13 +16,16 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i>
                                     </span>
-                                    <input ng-model="dataRegistrarContacto.foto" type="text" class="form-control" aria-label="..." placeholder="FOTO" required>
-                                    <span ngf-select ng-model="dataRegistrarContacto.file" name="inputFile" ngf-pattern="'image/*'"
-                                          ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" 
+                                    <input readonly ng-model="dataRegistrarContacto.foto.$ngfName" type="text" class="form-control" aria-label="..." placeholder="FOTO" required>
+                                    <span ngf-select ng-model="dataRegistrarContacto.foto" name="inputFile" ngf-pattern="'image/*'"
+                                          ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="300" 
                                           ngf-resize="{width: 300, height: 300}" style="border: solid 1px #c3c3c3; width: 50px; margin: 50px" class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
                                     </span>
                                 </div>
-                                <img style="margin-top: 10px; border-radius: 50%" ngf-src="file" ngf-resize="{width: 200, height: 100, quality: 1}">
+                                <img style="margin-top: 10px; border-radius: 50%" ngf-src="dataRegistrarContacto.foto" ngf-resize="{width: 100, height: 100, quality: 1}">
+                                <div class="alert alert-danger" ng-show="erroIMG">
+                                    Error en la imágen de contacto
+                                </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
@@ -58,6 +61,13 @@
                                     <input ng-model="dataRegistrarContacto.correo" type="email" class="form-control" aria-label="..." placeholder="CORREO" required>
                                 </div>
                             </div>
+
+                            <div class="progress" ng-show="progresoShow">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{progreso}}" aria-valuemin="0" aria-valuemax="100" style="width: {{progreso}}%;">
+                                    {{progreso}}%
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="row">

@@ -7,7 +7,7 @@
                     <h1 class="titulo2"><small class="glyphicon glyphicon-search"></small> Resultado de la Busqueda</h1>
                 </div>
                 <div class="row">
-                    <div class="alert alert-success">
+                    <div class="alert alert-success" ng-show="busquedadFallida">
                         <center>No hay resultado de busquedad</center>
                     </div>
                     <div class="col-lg-4 targeta" ng-repeat="contacto in contactos">
@@ -32,7 +32,7 @@
                                         <button class="btn btn-block btn-success botonTargeta">Editar</button>
                                     </div>
                                     <div class="col-lg-4">
-                                        <button class="btn btn-block btn-danger botonTargeta">Eliminar</button>
+                                        <button class="btn btn-block btn-danger botonTargeta" ng-click="eliminar2(contacto)">Eliminar</button>
                                     </div>
                                 </div>
                             </div>
@@ -46,4 +46,30 @@
 </div>
 <div class="divFooter">
     <center><p class="parrafo">Agenda Telefonica <span style="font-size: 15px">Marlon Villegas Vargas © 2017</span></p></center>
+</div>
+
+
+
+<!-- MODAL ELIMINAR CONTACTO-->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" id="eliminarContacto" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
+                    Eliminar Oso Maduro</h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-success" ng-show="contactoEliminado">
+                    <center>Contacto Eliminado</center>
+                </div>
+                <center>
+                    <h4>¿Esta seguro?</h4>
+                    <p>Se va a eliminar el contacto</p>
+                    <h3>{{nombre}} {{apellido}}</h3>
+                </center>
+                <button ng-click="submitEliminarContacto()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
+            </div>
+        </div>
+    </div>
 </div>

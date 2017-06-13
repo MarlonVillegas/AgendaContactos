@@ -2,6 +2,7 @@
 
 $config = new myConfig();
 $config->setPath('C:/xampp/htdocs/AgendaContactos/');
+$config->setDirUploads('C:/xampp/htdocs/AgendaContactos/www/uploads/');
 
 $config->setDrive('pgsql');
 $config->setHost('localhost');
