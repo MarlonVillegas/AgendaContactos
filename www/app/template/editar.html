@@ -1,77 +1,79 @@
 <ng-include src=" 'app/template/menuTop/menuTop.html' " ng-init="sessionStorage = session"></ng-include>
 <div class="container-fluid">
-  <div class="col-lg-12  principal">
-    <div class="row">
-      <div class="col-lg-10 col-lg-offset-1">
-        <div class="page-header">
-          <h1>Agregar Contacto</h1>
+    <div class="col-lg-12  principal">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="page-header">
+                    <h1 class="tituloAgregar"><small class="glyphicon glyphicon-pencil"></small> Editar Contacto<a href="#!/inicio"><small class="glyphicon glyphicon-menu-right iconoAtras"></small></a></h1>
+                </div>
+                <form ng-submit="submitEditarContacto()">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="alert alert-success" ng-show="ContactoRegistrado">
+                                <center>Contacto Creado Con Exito</center>
+                            </div>
+                            <div class="form-group" hidden>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input ng-model="edit.id" type="text" class="form-control" aria-label="..." placeholder="ID">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i>
+                                    </span>
+                                    <input ng-model="edit.foto" type="text" class="form-control fontImput" aria-label="..." placeholder="FOTO">
+                                    <span ngf-select ng-model="dataRegistrarContacto.foto" name="inputFile" ngf-pattern="'image/*'"
+                                          ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="300" 
+                                          ngf-resize="{width: 300, height: 300}"  class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
+                                    </span>
+                                </div>
+                                <img style="margin-top: 10px;" ngf-src="dataRegistrarContacto.foto" ngf-resize="{width: 100, height: 100, quality: 1}">
+                                <div class="alert alert-danger" ng-show="erroIMG">
+                                    Error en la imágen de contacto
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input ng-model="edit.nombre" type="text" class="form-control fontImput" aria-label="..." placeholder="NOMBRE" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input ng-model="edit.apellido" type="text" class="form-control fontImput" aria-label="..." placeholder="APELLIDO" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i>
+                                    </span>
+                                    <input ng-model="edit.telefono" type="tel" class="form-control fontImput" aria-label="..." placeholder="TELEFONO" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i>
+                                    </span>
+                                    <input ng-model="edit.correo" type="email" class="form-control fontImput" aria-label="..." placeholder="CORREO" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1">
+                            <button type="reset" class="btn btn-warning btn-block" title="Limpiar"><i class="glyphicon glyphicon-repeat"></i></button>
+                        </div>
+                        <div class="col-lg-2">
+                            <button type="submit" class="btn btn-primary btn-block fontImput" title="Guardar">Editar Contacto</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <form ng-submit="submitEditarContacto()">
-          <div class="row">
-            <div class="col-lg-3">
-              <div class="alert alert-success" ng-show="ContactoRegistrado">
-                <center>Contacto Creado Con Exito</center>
-              </div>
-              <div class="form-group" hidden>
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-                  </span>
-                  <input ng-model="edit.id" type="text" class="form-control" aria-label="..." placeholder="ID" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-picture"></i>
-                  </span>
-                  <input ng-model="edit.foto" type="text" class="form-control" aria-label="..." placeholder="FOTO" required>
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user-circle-o"></i>
-                  </span>
-                  <input ng-model="edit.nombre" type="text" class="form-control" aria-label="..." placeholder="NOMBRE" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user-circle"></i>
-                  </span>
-                  <input ng-model="edit.apellido" type="text" class="form-control" aria-label="..." placeholder="APELLIDO" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-mobile iconoForm2"></i>
-                  </span>
-                  <input ng-model="edit.telefono" type="tel" class="form-control" aria-label="..." placeholder="TELEFONO" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-envelope-o"></i>
-                  </span>
-                  <input ng-model="edit.correo" type="email" class="form-control" aria-label="..." placeholder="CORREO" required>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-1">
-              <button type="reset" class="btn btn-warning btn-block" title="Limpiar"><i class="glyphicon glyphicon-repeat"></i></button>
-            </div>
-            <div class="col-lg-1">
-              <button type="submit" class="btn btn-primary btn-block" title="Guardar"><i class="glyphicon glyphicon-user"></i></button>
-            </div>
-            <div class="col-lg-1">
-              <a href="#!/inicio"><button type="submit" class="btn btn-danger btn-block" title="Cancelar"><i class="glyphicon glyphicon-ban-circle"></i></button>
-              </a>
-            </div>
-          </div>
-        </form>
-      </div>
     </div>
-  </div>
 </div>

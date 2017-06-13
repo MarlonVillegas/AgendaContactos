@@ -19,14 +19,14 @@
                         </tr>
                         <tr ng-repeat="contacto in contactos">
                             <td hidden>{{contacto.con_id}}</td>
-                            <td class="centro"><img src="{{urlUploads + contacto.con_foto}}" class="img-responsive" width="50" height="50"></td>
-                            <td class="centro">{{contacto.con_nombre}}</td>
-                            <td class="centro">{{contacto.con_apellido}}</td>
-                            <td class="centro">{{contacto.con_telefono}}</td>
-                            <td class="centro">{{contacto.con_correo}}</td>
+                            <td class="centro"><center><img src="{{urlUploads + contacto.con_foto}}" class="img-responsive" width="50" height="50"></center></td>
+                        <td class="centro">{{contacto.con_nombre}}</td>
+                        <td class="centro">{{contacto.con_apellido}}</td>
+                        <td class="centro">{{contacto.con_telefono}}</td>
+                        <td class="centro">{{contacto.con_correo}}</td>
 
-                            <td class="centro"><i ng-click="editar(contacto)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
-                                <i ng-click="eliminar(contacto)" class="glyphicon glyphicon-trash"></i></td>
+                        <td class="centro"><i ng-click="editar(contacto)" title="Editar" class="glyphicon glyphicon-pencil iconoTabla"></i>
+                            <i ng-click="eliminar(contacto)" class="glyphicon glyphicon-trash"></i></td>
                         </tr>
 
                     </table>
@@ -35,11 +35,8 @@
             </div>
         </div>
     </div>
-
 </div>
-<div class="divFooter">
-    <center><p class="parrafo">Agenda Telefonica <span style="font-size: 10px">CristhianVg © 2017</span></p></center>
-</div>
+<ng-include src=" 'app/template/menuTop/footer.html' " ng-init="sessionStorage = session"></ng-include>
 
 <!-- MODAL ELIMINAR CONTACTO-->
 <div class="modal fade bs-example-modal-sm" tabindex="-1" id="eliminarContacto" role="dialog" aria-labelledby="mySmallModalLabel">
@@ -48,7 +45,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel"><i class="fa fa-trash"></i>
-                    Eliminar Oso Maduro</h4>
+                    Eliminar</h4>
             </div>
             <div class="modal-body">
                 <div class="alert alert-success" ng-show="contactoEliminado">
@@ -57,7 +54,7 @@
                 <center>
                     <h4>¿Esta seguro?</h4>
                     <p>Se va a eliminar el contacto</p>
-                    <h3>{{nombre}}</h3>
+                    <h3>{{nombre}} {{apellido}}</h3>
                 </center>
                 <button ng-click="submitEliminarContacto()" type="button" class="btn btn-danger btn-block btn-sm">Eliminar</button>
             </div>

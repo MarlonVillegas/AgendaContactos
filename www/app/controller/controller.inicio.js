@@ -18,6 +18,7 @@ angular.module('AgendaContactos').controller('inicioController', ['$scope', 'obt
     $scope.eliminar = function (dato) {
       $('#eliminarContacto').modal('toggle');
       $scope.nombre = dato.con_nombre;
+      $scope.apellido = dato.con_apellido;
       $scope.ideliminar = dato.con_id;
     };
 

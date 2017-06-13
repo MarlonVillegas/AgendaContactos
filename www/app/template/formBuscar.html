@@ -4,11 +4,11 @@
         <div class="row" style="margin-top: 0px;">
             <div class="col-lg-10 col-lg-offset-1" style="margin-top: 20px;">
                 <div class="page header">
-                    <h1 class="titulo2"><small class="glyphicon glyphicon-search"></small> Resultado de la Busqueda</h1>
+                    <h1 class="titulo2"><small class="glyphicon glyphicon-search"></small> Resultado de la Busqueda<a href="#!/inicio"><small class="glyphicon glyphicon-menu-right iconoAtras"></small></a></h1>
                 </div>
                 <div class="row">
                     <div class="alert alert-success" ng-show="busquedadFallida">
-                        <center>No hay resultado de busquedad</center>
+                        <center><p class="textMensaje"><small class="glyphicon glyphicon-info-sign"></small> No hay resultado de busqueda</p></center>
                     </div>
                     <div class="col-lg-4 targeta" ng-repeat="contacto in contactos">
                         <div class="panel panel-default">
@@ -42,12 +42,8 @@
             </div>
         </div>
     </div>
-
 </div>
-<div class="divFooter">
-    <center><p class="parrafo">Agenda Telefonica <span style="font-size: 15px">Marlon Villegas Vargas © 2017</span></p></center>
-</div>
-
+<ng-include src=" 'app/template/menuTop/footer.html' " ng-init="sessionStorage = session"></ng-include>
 
 
 <!-- MODAL ELIMINAR CONTACTO-->

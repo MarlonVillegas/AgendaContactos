@@ -1,10 +1,22 @@
-.parrafoError{
-  color: red;
-  margin-top: 8px;
-  margin-left: 40px;
+.tituloAgregar{
+    font-family: Berlin Sans FB;
 }
 
+.iconoAtras{
+    float: right;
+    font-size: 30px;
+}
+
+.fontImput{
+    font-family: Berlin Sans FB;
+}
+
+.parrafoError{
+    color: red;
+    font-family: Berlin Sans FB;
+    margin-left: 40px;
+    margin-top: 10px;
+}
 .iconoError{
-  margin-top: 10px;
-  font-size: 15px;
+    margin-right: 10px;
 }

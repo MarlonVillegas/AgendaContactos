@@ -10,12 +10,12 @@ angular.module('AgendaContactos').controller('agregarController', ['$scope', 're
             telefono: '',
             correo: ''
         };
+        $scope.modeloSoloLetras = '^[a-zA-Z ]+$';
 
         $scope.hola = function () {
             console.log(dataRegistrarContacto.foto);
         };
 
-//    $scope.modeloSoloLetras = '^[a-zA-Z ]+$';
         $scope.contactoRegistrado = false;
 
         $scope.submitNuevoContacto = function () {
