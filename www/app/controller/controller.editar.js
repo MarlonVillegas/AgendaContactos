@@ -23,11 +23,11 @@ angular.module('AgendaContactos').controller('editarController', ['$scope', 'edi
 //                    $timeout(function () {
 //                        $('#nuevoContacto').modal('toggle');
 //                    }, 700);
-//                    $timeout(function () {
-//                        // $route.reload();
-//                        window.location.reload();
-//                        $location.path('inicio');
-//                    }, 1000);
+                    $timeout(function () {
+                        //$route.reload();
+                        window.location.reload();
+                        $location.path('inicio');
+                    }, 1000);
 
                 }, function (response) {
                     console.log('Error status: ' + response.status);

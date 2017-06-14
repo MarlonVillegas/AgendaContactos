@@ -72,5 +72,11 @@ angular.module('AgendaContactos').controller('formBuscarController', ['$scope', 
                 console.error(response);
             });
         };
+
+
+        $scope.editar = function (contacto) {
+            $sessionStorage.datosPersona = contacto;
+            $location.path('/editar');
+        };
     }]);
 

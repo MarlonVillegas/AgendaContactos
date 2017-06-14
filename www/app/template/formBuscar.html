@@ -15,7 +15,7 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-lg-3">
-                                        <center><img src="{{urlUploads + contacto.con_foto}}" class="img-responsive" width="50" height="50"></center>
+                                        <center><img src="{{urlUploads + contacto.con_foto}}" class="img-responsive img-circle imgTargeta"></center>
                                     </div>
                                     <div class="col-lg-9">
                                         <div class="page-header headerTargeta">
@@ -29,7 +29,7 @@
                             <div class="panel-footer">
                                 <div class="row">
                                     <div class="col-lg-4 col-lg-offset-4">
-                                        <button class="btn btn-block btn-success botonTargeta">Editar</button>
+                                        <button ng-click="editar(contacto)" class="btn btn-block btn-success botonTargeta">Editar</button>
                                     </div>
                                     <div class="col-lg-4">
                                         <button class="btn btn-block btn-danger botonTargeta" ng-click="eliminar2(contacto)">Eliminar</button>

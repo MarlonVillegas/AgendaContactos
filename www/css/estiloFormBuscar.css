@@ -19,3 +19,9 @@
 .textMensaje{
     font-size: 30px;
 }
+
+.imgTargeta{
+    width: 200px;
+    height: 100px;
+    margin-top: 5px;
+}
